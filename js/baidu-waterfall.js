@@ -1,6 +1,7 @@
 $(function() {
 	$(window).load(function() {
 		pictureLine();
+		// 模拟数据
 		var dataImg = {
 			"data": [{
 				"src": "1.jpg",
@@ -34,6 +35,7 @@ $(function() {
 				"title": "狗狗"
 			}]
 		};
+
 		var navHeight = $(".content-nav").offset().top; //获取导航栏距离顶部的距离 
 		$(window).scroll(function() {
 
@@ -67,17 +69,21 @@ $(function() {
 		});
 	});
 
+	// 图片hover效果
 	$(".box .picture").mouseover(function() {
 		$(this).addClass("pocture-hover");
 	}).mouseout(function() {
 		$(this).removeClass("pocture-hover");
-	});                                           //瀑布流图片的hover效果
+	}); //瀑布流图片的hover效果
 
-	$(".back").click(function(){
-		$("body").animate({scrollTop:0},1000);     //设置body的scrollTop可以返回顶部
-	}).mouseover(function(){
+	// 回到顶部
+	$(".back").click(function() {
+		$("body").animate({
+			scrollTop: 0
+		}, 1000); //设置body的scrollTop可以返回顶部
+	}).mouseover(function() {
 		$(this).removeClass("back-bg").addClass("back-bg-hover");
-	}).mouseout(function(){
+	}).mouseout(function() {
 		$(this).addClass("back-bg").removeClass("back-bg-hover");
 	})
 });
